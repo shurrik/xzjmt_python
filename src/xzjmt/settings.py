@@ -1,5 +1,6 @@
 # Django settings for xzjmt project.
 import os
+import xzjmt
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -20,6 +21,8 @@ DATABASES = {
         'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
+WWW_ROOT = 'localhost:8000'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -122,7 +125,20 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'xzjmt.category'
+    'xzjmt.category',
+    'xzjmt.context'
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # others ...
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'xzjmt.context.utils.global_context'
 )
 
 # A sample logging configuration. The only tangible logging
