@@ -135,6 +135,7 @@ INSTALLED_APPS = (
     'xzjmt.message',
     'xzjmt.collection',
     'xzjmt.follow',
+    'xzjmt.reg',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
