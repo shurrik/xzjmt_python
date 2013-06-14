@@ -1,4 +1,10 @@
 # Create your views here.
 import xzjmt
 def global_context(request):
-    return {'WWW_ROOT':xzjmt.settings.WWW_ROOT}
+    c = {
+         'wwwroot':xzjmt.settings.WWW_ROOT,
+         'cssroot':xzjmt.settings.CSS_ROOT,
+         'jsroot':xzjmt.settings.JS_ROOT,
+         'imgroot':xzjmt.settings.IMG_ROOT,
+        }
+    return c

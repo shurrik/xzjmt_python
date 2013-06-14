@@ -1,6 +1,5 @@
 # Django settings for xzjmt project.
 import os
-import xzjmt
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -22,7 +21,10 @@ DATABASES = {
     }
 }
 
-WWW_ROOT = 'localhost:8000'
+WWW_ROOT = 'http://localhost:8000'
+CSS_ROOT = WWW_ROOT+'/static/style'
+IMG_ROOT = WWW_ROOT+'/static/img'
+JS_ROOT = WWW_ROOT+'/static/js'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

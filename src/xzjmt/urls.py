@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'xzjmt.views.index', name='home'),
+    url(r'^$', 'xzjmt.views.home', name='home'),
     # url(r'^xzjmt/', include('xzjmt.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
