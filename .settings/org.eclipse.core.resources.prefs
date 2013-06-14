@@ -1,5 +1,11 @@
 eclipse.preferences.version=1
 encoding//src/xzjmt/category/models.py=utf-8
+encoding//src/xzjmt/city/models.py=utf-8
+encoding//src/xzjmt/collection/models.py=utf-8
+encoding//src/xzjmt/follow/models.py=utf-8
+encoding//src/xzjmt/item/models.py=utf-8
+encoding//src/xzjmt/itempic/models.py=utf-8
+encoding//src/xzjmt/message/models.py=utf-8
 encoding//src/xzjmt/templates/home.html=UTF-8
 encoding//src/xzjmt/templates/include/footer.html=UTF-8
 encoding//src/xzjmt/templates/include/head.html=UTF-8

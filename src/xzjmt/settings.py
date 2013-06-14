@@ -127,8 +127,14 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'xzjmt.context',
     'xzjmt.category',
-    'xzjmt.context'
+    'xzjmt.city',
+    'xzjmt.item',
+    'xzjmt.itempic',
+    'xzjmt.message',
+    'xzjmt.collection',
+    'xzjmt.follow',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
