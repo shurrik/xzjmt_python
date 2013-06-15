@@ -62,7 +62,8 @@
 		          </li>		          
 		        </ul> 				
 			{% else %}
-				<form id="loginForm" action="{{wwwroot}}/authenticate" class="navbar-form pull-right" method="post">
+				<form id="loginForm" action="{{wwwroot}}/login" class="navbar-form pull-right" method="post">
+				{% csrf_token %}
 				  账号：<input name="username" type="text" class="span2" placeholder="邮箱/昵称" required>
 				  密码：<input name="password" type="password" class="span2" required>
 					<input type="submit" name="submit" value="登录" />
