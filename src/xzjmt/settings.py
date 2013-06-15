@@ -21,6 +21,8 @@ DATABASES = {
     }
 }
 
+APPEND_SLASH = True
+
 WWW_ROOT = 'http://localhost:8000'
 CSS_ROOT = WWW_ROOT+'/static/style'
 IMG_ROOT = WWW_ROOT+'/static/img'
@@ -136,6 +138,7 @@ INSTALLED_APPS = (
     'xzjmt.collection',
     'xzjmt.follow',
     'xzjmt.reg',
+    'xzjmt.self',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

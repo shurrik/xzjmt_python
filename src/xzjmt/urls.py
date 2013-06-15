@@ -1,20 +1,20 @@
 from django.conf.urls import patterns, include, url
 
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
     url(r'^$', 'xzjmt.views.home', name='home'),
+    url(r'^about$', 'xzjmt.views.about', name='about'),
     url(r'^login$', 'xzjmt.views.login', name='login'),
     url(r'^logout$', 'xzjmt.views.logout', name='logout'),
-    # url(r'^xzjmt/', include('xzjmt.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^login$', 'xzjmt.views.login', name='login'),
+    
+    url(r'^accounts/login/$', 'xzjmt.views.accountLogin', name='loginView'),
+    url(r'^accounts/auth$', 'xzjmt.views.accountAuth', name='auth'),
 
     url(r'^reg/', include('xzjmt.reg.urls')),
-    # Uncomment the next line to enable the admin:
+    url(r'^self/', include('xzjmt.self.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
+
