@@ -1,14 +1,16 @@
-<@override name="csslib">
-	<@super />
-      <link rel="stylesheet" type="text/css" href="${cssroot}/uploadify.css" charset="utf-8" />
-</@override>
-<@override name="jslib">
-	<@super />
-	  	<script type="text/javascript" src="${jsroot}/jquery.uploadify.min.js"></script>
-</@override>	
-<@override name="body">
+{% extends "include/base.html" %}
+{% block csslib %}
+	{{ block.super }}
+	<link rel="stylesheet" type="text/css" href="{{cssroot}}/uploadify.css" charset="utf-8" />
+{% endblock %}
+{% block jslib %}
+	{{ block.super }}
+	<script type="text/javascript" src="{{jsroot}}/jquery.uploadify.min.js"></script>
+{% endblock %}
+{% block body %}
 
-<form id="itemForm" action="${wwwroot}/self/item/add" class="form-horizontal" method="post">
+<form id="itemForm" action="{{wwwroot}}/self/item/add" class="form-horizontal" method="post">
+{% csrf_token %}
 	<input name="picCover" id="picCover" type="hidden">
   <fieldset>
 		<legend></legend>
@@ -28,22 +30,22 @@
         
 		<div class="control-group">
 		    <label class="control-label" for="cityId">所在城市</label>
-            <div class="controls">
-              <select id="cityId" name="cityId" required>
-                <#list citys as city>
-                	<option value="${(city.cityId)!}" <#if user.cityId??&user.cityId==city.cityId>selected</#if>>${(city.cityName)!}</option>                	
-                </#list>
-              </select>
-            </div>
+		          <div class="controls">
+		            <select id="cityId" name="cityId" required>
+		              {% for city in citys %}
+		              	<option value="{{city.city_id}}" >{{city.city_name}}</option>
+		              {% endfor %}
+		            </select>
+		          </div>
 		</div>
 		<div class="control-group">
 		    <label class="control-label" for="catId">分类</label>
             <div class="controls">
               <select id="catId" name="catId" required>
                 <option value="">请选择</option>
-                <#list categorys as category>
-                	<option value="${(category.catId)!}">${(category.catName)!}</option>                	
-                </#list>
+                {% for category in categorys %}
+                	<option value="{{category.cat_id}}" >{{category.cat_name}}</option>
+                {% endfor %}                
               </select>
             </div>
 		</div>		        
@@ -60,8 +62,6 @@
 	
 		<div class="form-actions">
 		        <button class="btn btn-large btn-primary" type="submit">保存</button>
-		<#--
-            <a class="btn btn-primary" href="javascript:void(0);" onclick="javascript:$('#itemForm').submit();">保存</a>-->
         </div>
         
   </fieldset>
@@ -78,8 +78,8 @@ $(function(){
 			'folder' : '/img/item'
 			
 		},			
-		'swf'      : '${cssroot}/uploadify.swf',
-		'uploader' : '${wwwroot}/upload',
+		'swf'      : '{{cssroot}}/uploadify.swf',
+		'uploader' : '{{wwwroot}}/upload',
 		'onUploadSuccess' : function(file, data, response) {
 			var json = eval("("+data+")");
 			if($('#picCover').val()=='')
@@ -109,5 +109,4 @@ function appendPic(picUrl,picUrlSmall)
 	$("#fileQueue").append(str);			
 }
 </script>
-</@override>
-<@extends name="../include/base.ftl" />
+{% endblock %}
