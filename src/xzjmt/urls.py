@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^accounts/login/$', 'xzjmt.views.accountLogin', name='loginView'),
     url(r'^accounts/auth$', 'xzjmt.views.accountAuth', name='auth'),
 
+    url(r'^item/', include('xzjmt.item.urls')),
     url(r'^reg/', include('xzjmt.reg.urls')),
     url(r'^self/', include('xzjmt.self.urls')),
     url(r'^admin/', include(admin.site.urls)),
